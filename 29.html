@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      Lorem <strong> ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quam</strong>
+      aspernatur unde sit aperiam. Voluptatem perspiciatis maxime magnam sunt.
+      Vel mollitia iste placeat ipsa, dolore omnis, veritatis modi magni
+      repellendus harum architecto. Dolorum!
+
+      <h1 id="hello">HEllo i am clicked
+        <div id="hello1">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, eaque.
+        </div>
+      </h1>
+    </div>
+    <script>
+        let parent=document.querySelector("div")
+        let child=document.querySelector("strong")
+        let head=document.querySelector('#hello')
+        let head1=document.querySelector('#hello1')
+        parent.addEventListener('click',()=>{
+            alert('hover parent h1')
+        })
+        parent.addEventListener('click',()=>{
+            alert('inside h1"s dic clicked ')
+        },true)
+        parent.addEventListener('click',()=>{
+            alert('clicked parent')
+        })
+
+        child.addEventListener('click',()=>{
+            alert('clicked child')
+        })
+        
+    </script>
+  </body>
+</html>

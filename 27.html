@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="images">
+
+    </div>
+    <script>
+        function loadImage(url){
+                return new Promise((res,rej)=>{
+                    let img=new Image()
+                    img.onload =function(){
+                        res(img);
+                    }
+                    img.onerror =function(){
+                        rej(new Error("failed to Load Image"));
+                    }
+                    img.src=url;
+                })
+        }
+        let imgcont=document.getElementById('images');
+        let imageUrl=["./images/twenty.jpg","./images/one.jpg","./images/two.jpg","./images/thr.jpg"]
+        Promise.all(imageUrl.map(load))
+        .then(image=>{
+            image.foreach(image=>imgcont.appendChild(image))
+        })
+        .catch(error=>console.log(error));
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #hello{
+            background-color: gray;
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="hello"></div>
+    <!-- <button id="mybtn">Click here</button> -->
+    <!-- <button id="mybtn2">rejrect</button> -->
+
+    <script>
+        // const myProm=new Promise((res,rej)=>{
+           
+        // })
+        // myProm.then((result)=>{
+        //     console.log('i am clicked');
+        // })
+        // .catch((error)=>{
+        //     console.log(error);
+        // })
+        //     const btnClick=document.getElementById('mybtn').addEventListener('click',()=>{
+        //             console.log(Promise.resolve(myProm));
+        //     })
+        // const myProm=new Promise((res,rej)=>{
+        //     const btnClick=document.getElementById('mybtn').addEventListener('click',()=>{
+        //             res("i am Clicked")
+        //     })
+        //     const btnClick2=document.getElementById('mybtn2').addEventListener('click',()=>{
+        //             rej("i am Rejected")
+        //     })
+        // })
+
+        // myProm.then((res)=>console.log(res))
+        // .catch((err)=>{
+        //     console.log(err);
+        // })
+
+
+        document.addEventListener('click',(e)=>{
+            const x=e.clientX
+            const y=e.clientX
+            console.log(x,y);
+            const randNo=Math.random()
+            const rad="50px"
+            const circle=document.createElement("div")
+            circle.classList.add("circle")
+            circle.style.top=y+"px";
+            circle.style.left=x+"px"
+            circle.style.width=rad
+            circle.style.height=rad
+            circle.style.backgroundColor="blue"
+
+
+            document.body.appendChild(circle)
+        })
+    </script>
+  </body>
+</html>
